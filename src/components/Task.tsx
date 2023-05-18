@@ -1,7 +1,5 @@
-import React from 'react'
-
-function Task(): JSX.Element {
-  return <h1>Task Component</h1>
+function Task(props: { task: string }): JSX.Element {
+  return <h1>{props.task}</h1>
 }
 
 export default Task
