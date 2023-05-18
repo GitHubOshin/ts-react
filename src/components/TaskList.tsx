@@ -1,7 +1,4 @@
-interface Item {
-  id: number
-  name: string
-}
+import Item from '../models/item'
 
 interface TaskListProp {
   items: Item[]
