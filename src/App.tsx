@@ -1,11 +1,15 @@
 import './App.css'
-import Task from './components/Task'
+import TaskList from './components/TaskList'
 
 function App() {
+  const items = [
+    { id: 1, name: 'coding' },
+    { id: 2, name: 'solving program' },
+    { id: 3, name: 'testing program' }
+  ]
   return (
     <>
-      <Task task="Go to study" />
-      <Task task="Meet friends at 6pm" />
+      <TaskList items={items} />
     </>
   )
 }
