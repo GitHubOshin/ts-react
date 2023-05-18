@@ -1,4 +1,13 @@
-function TaskList(): JSX.Element {
+interface Item {
+  id: number
+  name: string
+}
+
+interface TaskListProp {
+  items: Item[]
+}
+
+function TaskList(props: TaskListProp): JSX.Element {
   return (
     <>
       <h1>All the things that I need todo...</h1>
