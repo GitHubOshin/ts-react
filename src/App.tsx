@@ -1,12 +1,10 @@
+import { useState } from 'react'
 import './App.css'
 import TaskList from './components/TaskList'
+import Item from './models/item'
 
 function App() {
-  const items = [
-    { id: 1, name: 'coding' },
-    { id: 2, name: 'solving program' },
-    { id: 3, name: 'testing program' }
-  ]
+  const [items, setItems] = useState<Item[]>([])
   return (
     <>
       <TaskList items={items} />
