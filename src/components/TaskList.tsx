@@ -9,8 +9,9 @@ function TaskList(props: TaskListProp): JSX.Element {
     <>
       <h1>All the things that I need todo...</h1>
       <ul>
-        <li>Task 1</li>
-        <li>Task 2</li>
+        {props.items.map((elememt) => (
+          <li key={elememt.id}>{elememt.name}</li>
+        ))}
       </ul>
     </>
   )
