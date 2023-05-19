@@ -4,7 +4,9 @@ function TaskForm(): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null)
   function saveTask(e: React.FormEvent) {
     e.preventDefault()
-    console.log(inputRef)
+    const name = inputRef.current?.value
+    console.log(name)
+    // inputRef.current?.value = ''
   }
   return (
     <form onSubmit={saveTask}>
