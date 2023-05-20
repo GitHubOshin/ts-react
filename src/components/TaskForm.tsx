@@ -1,12 +1,25 @@
 import React, { useRef } from 'react'
+import { FormEventHandler } from 'react'
 
-function TaskForm(): JSX.Element {
+type TaskFormProps = {
+  title: string
+  completed: boolean
+}
+
+const TaskForm: React.FC<TaskFormProps> = ({ title, completed }) => {
+  console.log({ title, completed })
   const inputRef = useRef<HTMLInputElement>(null)
-  function saveTask(e: React.FormEvent) {
+  // function saveTask(e: React.FormEvent) {
+  const saveTask: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
-    const name = inputRef.current?.value
+    const name = inputRef.current?.value || ''
     console.log(name)
-    // inputRef.current?.value = ''
+    // if (inputRef.current !== undefined && inputRef.current !== null) {
+    //   inputRef.current.value = ''
+    // }
+    // if (inputRef.current) {
+    //   inputRef.current.value = ''
+    // }
   }
   return (
     <form onSubmit={saveTask}>
