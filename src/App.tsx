@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 import TaskList from './components/TaskList'
-import Item from './models/item'
+import { Todo } from './models/todo'
 import TaskForm from './components/TaskForm'
 
 function App() {
-  const [items, setItems] = useState<Item[]>([])
+  const [todos, setTodos] = useState<Todo[]>([])
+
   return (
     <>
-      <TaskForm />
-      <TaskList items={items} />
+      <TaskForm todos={todos} setTodos={setTodos} />
+      <TaskList todos={todos} setTodos={setTodos} />
+      {JSON.stringify(todos, null, 3)}
     </>
   )
 }
